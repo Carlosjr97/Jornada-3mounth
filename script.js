@@ -10,6 +10,13 @@ function ajustarEscala() {
     const escalaAltura = window.innerHeight / ALTURA_BASE;
     const escala = Math.min(escalaLargura, escalaAltura); // usa a menor, pra caber a cena inteira sem cortar nada
     cena.style.transform = "scale(" + escala + ")";
+
+    // Expõe a escala como variável CSS (--escala) pra UI (botões, textos, relógio)
+    // conseguir se "descompensar" do scale() acima: em responsivo.css usamos
+    // clamp(minVisual/var(--escala), tamanhoBase, maxVisual/var(--escala)), o que
+    // faz o tamanho FINAL NA TELA (depois do scale) ficar sempre entre minVisual e
+    // maxVisual em pixels reais, em vez de encolher/crescer junto com a cena.
+    document.documentElement.style.setProperty("--escala", escala);
 }
 
 if (cena) {

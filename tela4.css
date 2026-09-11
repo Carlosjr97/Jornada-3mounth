@@ -122,7 +122,7 @@ body {
 
     image-rendering: pixelated;
 }
-#btnSubanamoto:hover {
+#btnEncerrar:hover {
     transform: scale(1.1);
 }
 

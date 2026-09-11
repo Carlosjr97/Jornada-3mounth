@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela4.css">
+
+</head>
+
+<body>
+<main class="tela-4"> <!-- Conteúdo principal da tela, classe CSS para a main -->
+    <!-- aqui em baixo estamos declarando uma div que é aonde vamos desenhar o asfalto e outra div que vamos desenhar a nuvem
+    src = usamos src para o caminho da imagem 
+    alt = usamos alt para descrever imagem
+    class cama, dormindo, comoda, dormindo são classes para as imagens
+    OBSERVAÇÃO
+na imagem correndo, casa usamos um ID pois no javascript vamos usar isso para trocar o src dela-->
+    <div class="asfalto1"></div>
+    <div class="nuvem">
+        <div class="nuvem-bolha"></div>
+        <div class="nuvem-bolha"></div>
+        <div class="nuvem-bolha"></div>
+    </div>
+    <img 
+        src="assets/correndo.png"
+        alt="Correndo"
+        class="correndo" 
+        id="imgCorrendo"
+        >
+    
+    <img 
+        src="assets/sentadomoto.png"
+        alt="Sentado"
+        class="sentado"  
+        >
+        
+    <img
+        src="assets/casa.png"
+        alt="Casa"
+        class="casaChegando"
+        id="imgCasaChegando"
+    >
+    <button id="btnEncerrar"> <!-- Criando botão usamos btnPlay para identificar o botão -->
+        Encerrar expediente <!-- conteúdo do botão -->
+    </button> <!-- fechamento do botão -->
+</main> <!-- fechamento da main conteúdo principal -->
+
+<script src="script.js"></script> <!-- linkando com o arquivo javascript -->
+</body>
+</html>

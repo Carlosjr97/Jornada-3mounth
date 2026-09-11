@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela3.css">
+
+</head>
+
+<body>
+<main class="tela-3"> <!-- Conteúdo principal da tela, classe CSS para a main -->
+    <!-- aqui em baixo estamos declarando uma div que é aonde vamos desenhar o asfalto
+    src = usamos src para o caminho da imagem 
+    alt = usamos alt para descrever imagem
+    class cama, dormindo, comoda, dormindo são classes para as imagens
+    OBSERVAÇÃO
+na imagem Parado e pop usamos um ID pois no javascript vamos usar isso para trocar o src dela-->
+    <div class="asfalto"></div>
+    <img 
+        src="assets/casa.png"
+        alt="Casa"
+        class="casa" 
+        >
+    
+    <img 
+        src="assets/parado.png"
+        alt="Parado"
+        class="parado" 
+        id="imgPersonagem" 
+        >
+
+    <img 
+        src="assets/pop.png"
+        alt="Pop"
+        class="pop" 
+        id="imgPop"
+        >
+        
+    <button id="btnSubanamoto"> <!-- Criando botão usamos btnPlay para identificar o botão -->
+        Suba na pop e vá trabalhar <!-- conteúdo do botão -->
+    </button> <!-- fechamento do botão -->
+</main> <!-- fechamento da main conteúdo principal -->
+
+<script src="script.js"></script> <!-- linkando com o arquivo javascript -->
+</body>
+</html>

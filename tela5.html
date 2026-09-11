@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela5.css">
+
+</head>
+
+<body>
+<main class="tela-5"> <!-- Conteúdo principal da tela, classe CSS para a main -->
+    <!-- aqui em baixo estamos declarando uma div que é aonde vamos desenhar o chão 
+    src = usamos src para o caminho da imagem 
+    alt = usamos alt para descrever imagem
+    class cama, dormindo, comoda, dormindo são classes para as imagens
+    OBSERVAÇÃO
+na imagem lendo usamos um ID pois no javascript vamos usar isso para trocar o src dela-->
+    <div class="chao1"></div>
+    <img
+        src="assets/lendo.png"
+        alt="Lendo"
+        class="lendo"
+        id="imgLendo"
+        >
+     <div class="botoes">
+    <button id="btnCandidatar"> <!-- Criando botão usamos btnCandidatar para identificar o botão -->
+        Se candidatar para vagas compatíveis <!-- conteúdo do botão -->
+    </button>
+    <button id="btnContato">
+        Fazer contato com recrutadores no Linkedin
+    </button><!-- fechamento do botão -->
+</div>
+
+    <!-- tela de gameover: fica escondida (classe "gameover") até o JS adicionar "mostrar" -->
+    <div class="gameover" id="gameover">
+        <p id="gameoverMensagem"></p>
+        <div class="gameover-botoes">
+            <button id="btnTentarNovamente">Tentar novamente</button>
+            <button id="btnProximoDia">Pular para o dia seguinte</button>
+        </div>
+    </div>
+</main> <!-- fechamento da main conteúdo principal -->
+
+<script src="script.js"></script> <!-- linkando com o arquivo javascript -->
+</body>
+</html>

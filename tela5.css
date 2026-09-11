@@ -1,0 +1,164 @@
+* { /* aqui esta todos os elementos do HTML*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*  Configurações gerais da página */
+body {
+    background-color: #08163D;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    /* centraliza a "cena" (tamanho fixo) dentro da janela/tela do celular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* controla a tela inicial
+   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
+   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+.tela-5 {
+    width: 1366px;
+    height: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+.chao1 {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 15%;
+
+    background-color: #4a2f20;
+}
+
+/* aqui definimos o tamanho da capa*/
+.lendo {
+    width: 500px;
+    height: 600px;
+    bottom: 0px;
+    position: absolute;
+}
+
+
+.botoes {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    gap: 50px;
+}
+/* aqui é o conteúdo do botão*/
+#btnCandidatar {
+    position: relative;
+    bottom: 8%;
+
+    padding: 15px 40px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 4px solid white;
+    background: green;
+    color: white;
+
+    image-rendering: pixelated;
+}
+
+#btnCandidatar:hover {
+    transform: scale(1.1);
+}
+
+#btnContato {
+    position: relative;
+    bottom: 8%;
+
+    padding: 15px 40px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 4px solid white;
+    background: blue;
+    color: white;
+
+    image-rendering: pixelated;
+}
+
+#btnContato:hover {
+    transform: scale(1.1);
+}
+
+/* escondida por padrão; o JS adiciona a classe "mostrar" para exibir */
+.gameover {
+    display: none;
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    z-index: 10;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.gameover.mostrar {
+    display: flex;
+}
+
+.gameover p {
+    font-size: 28px;
+    font-weight: bold;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.gameover-botoes {
+    display: flex;
+    gap: 30px;
+}
+
+.gameover-botoes button {
+    padding: 15px 30px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 4px solid white;
+    color: white;
+
+    image-rendering: pixelated;
+}
+
+#btnTentarNovamente {
+    background: #A9020B;
+}
+
+#btnProximoDia {
+    background: #444;
+}
+
+#btnTentarNovamente:hover,
+#btnProximoDia:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,62 @@
+* { /* aqui esta todos os elementos do HTML*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*  Configurações gerais da página */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    /* centraliza a "cena" (tamanho fixo) dentro da janela/tela do celular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* controla a tela inicial
+   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
+   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+.tela-inicial {
+    width: 1366px;
+    height: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* aqui definimos o tamanho da capa*/
+.capa-jogo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    image-rendering: pixelated;
+}
+/* aqui é o conteúdo do botão*/
+#btnPlay {
+    position: absolute;
+    bottom: 8%;
+
+    padding: 15px 40px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 4px solid white;
+    background: #A9020B;
+    color: white;
+
+    image-rendering: pixelated;
+}
+
+#btnPlay:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,116 @@
+* { /* aqui esta todos os elementos do HTML*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*  Configurações gerais da página */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    /* centraliza a "cena" (tamanho fixo) dentro da janela/tela do celular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* controla a tela inicial
+   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
+   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+.tela-2 {
+    width: 1366px;
+    height: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+.chao {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 15%;
+
+    background-color: #4a2f20;
+}
+
+/* aqui definimos o tamanho da capa*/
+.cama {
+    width: 700px;
+    height: 450px;
+    bottom: 20px;
+    position: absolute;
+}
+
+.dormindo{
+    width: 400px;
+    height: 150px;
+    bottom: 250px;
+    position: absolute;
+}
+
+/* aplicada no lugar de .dormindo quando o personagem acorda
+   ajuste width/height/bottom aqui até o tamanho ficar igual ao de .dormindo na tela */
+.acordado{
+    width: 400px;
+    height: 150px;
+    bottom: 250px;
+    position: absolute;
+}
+
+.comoda{
+    width: 300px;
+    height: 290px;
+    bottom: 85px;
+    left: 100px;
+    position: absolute;
+}
+
+.janela{
+    width: 300px;
+    height: 290px;
+    bottom: 350px;
+    position: absolute;
+}
+
+.relogio {
+    position: absolute;
+    top: 59.6%;
+    left: 19.5%;
+
+    font-size: 17px;
+    font-weight: bold;
+    color: red;
+
+    image-rendering: pixelated;
+}
+/* aqui é o conteúdo do botão*/
+#btnAcordar {
+    position: absolute;
+    bottom: 8%;
+
+    padding: 15px 40px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 4px solid white;
+    background: #A9020B;
+    color: white;
+
+    image-rendering: pixelated;
+}
+
+#btnAcordar:hover {
+    transform: scale(1.1);
+}

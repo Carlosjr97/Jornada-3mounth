@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela2.css">
+
+</head>
+
+<body>
+<main class="tela-2"> <!-- Conteúdo principal da tela, classe CSS para a main -->
+    <!-- aqui em baixo estamos declarando uma div que é aonde vamos desenhar o chão e uma imagem para a tela 
+    src = usamos src para o caminho da imagem 
+    alt = usamos alt para descrever imagem
+    class cama, dormindo, comoda, dormindo são classes para as imagens
+    OBSERVAÇÃO
+na imagem dormindo usamos um ID pois no javascript vamos usar isso para trocar o src dela-->
+    <div class="chao"></div>
+    <img 
+        src="assets/cama.png"
+        alt="Cama"
+        class="cama" 
+        >
+    
+    <img 
+        src="assets/dormindo.png"
+        alt="Dormindo"
+        class="dormindo" 
+        id="imgDormindo" 
+        >
+
+    <img 
+        src="assets/comoda.png"
+        alt="Comoda"
+        class="comoda" 
+        >
+        
+    <img 
+        src="assets/janela.png"
+        alt="Janela"
+        class="janela" 
+        >
+
+    <div id="relogio" class="relogio">5:29</div> <!--Elemento para o relógio, o `id="relogio"` é o que o JavaScript vai usar para achar esse elemento
+        e trocar o texto. A `class="relogio"` é para estilizar no CSS.-->
+    <button id="btnAcordar"> <!-- Criando botão usamos btnPlay para identificar o botão -->
+        Acordar <!-- conteúdo do botão -->
+    </button> <!-- fechamento do botão -->
+</main> <!-- fechamento da main conteúdo principal -->
+
+<script src="script.js"></script> <!-- linkando com o arquivo javascript -->
+</body>
+</html>

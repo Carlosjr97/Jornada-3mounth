@@ -136,37 +136,39 @@ body {
     .janela {
         width: 40vw;
         height: 38vw;
-        top: 5%;
+        top: 40%;
         bottom: auto;
     }
 
     .cama {
-        width: 88vw;
-        height: 58vw;
-        bottom: 14%;
+        width: 50vw;
+        height: 35vw;
+        bottom: 10%;
+        left: 40%;
     }
 
     .dormindo,
     .acordado {
-        width: 58vw;
-        height: 21vw;
-        bottom: calc(14% + 22vw);
+        width: 30vw;
+        height: 11vw;
+        bottom: calc(9% + 22vw);
+        left: 52%;
     }
 
     .comoda {
         width: 26vw;
-        height: 25vw;
-        left: 4vw;
-        bottom: 16%;
+        height: 30vw;
+        left: 10vw;
+        bottom: 13%;
     }
 
     #relogio {
-        left: 6vw;
+        left: 24vw;
         top: auto;
-        bottom: calc(16% + 20vw);
+        bottom: calc(13.7% + 20vw);
     }
 
     #btnAcordar {
-        bottom: 4%;
+        bottom: 3%;
     }
 }

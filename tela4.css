@@ -159,33 +159,37 @@ body {
     }
 
     .nuvem {
-        top: 6%;
+        top: 36%;
         width: 30vw;
         height: 10vw;
     }
 
     .correndo {
-        width: 34vw;
-        height: 20vw;
+        width: 25vw;
+        height: 15vw;
         left: 6vw;
-        bottom: 17%;
+        bottom: 15%;
     }
 
     .sentado {
-        width: 20vw;
-        height: 27vw;
-        left: 8vw;
-        bottom: 20%;
+        width: 15vw;
+        height: 20vw;
+        left: 10vw;
+        bottom: 16.3%;
     }
 
     .casaChegando {
-        width: 74vw;
+        width: 70vw;
         height: 44vw;
-        bottom: 17%;
+        bottom: 16%;
+    }
+
+    .casaChegando.chegou {
+        left: 30%; /* posição final — ajuste até ficar do lado da moto */
     }
 
     #btnEncerrar {
         bottom: auto;
-        top: 10%;
+        top: 40%;
     }
 }

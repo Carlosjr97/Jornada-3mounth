@@ -98,28 +98,28 @@ body {
     }
 
     .casa {
-        width: 92vw;
-        height: 58vw;
-        top: 4%;
-        left: 4vw;
+        width: 95vw;
+        height: 65vw;
+        top: 48%;
+        left: 1vw;
         bottom: auto;
     }
 
     .parado {
-        width: 24vw;
-        height: 35vw;
+        width: 14vw;
+        height: 23vw;
         left: 34vw;
         bottom: 14%;
     }
 
     .pop {
-        width: 32vw;
-        height: 19vw;
-        left: 56vw;
-        bottom: 14%;
+        width: 22vw;
+        height: 15vw;
+        left: 50vw;
+        bottom: 10%;
     }
 
     #btnSubanamoto {
-        bottom: 38%;
+        bottom: 40%;
     }
 }

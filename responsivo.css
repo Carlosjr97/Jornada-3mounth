@@ -20,7 +20,7 @@
    mexer em cor/borda/fundo, que continuam definidos no CSS de cada tela.
    ========================================================================== */
 
-:root {
+   :root {
     --escala: 1; /* valor de segurança até o script.js calcular o real */
 }
 
@@ -143,6 +143,18 @@ button {
         height: 100dvh; /* dvh conta a barra de endereço do navegador do celular; sobrescreve o 100vh acima em navegadores que suportam */
         max-width: none;
     }
+
+    #btnCandidatar,
+#btnContato {
+    width: 80%;
+    max-width: 340px;
+
+    min-height: 80px;
+
+    font-size: 20px;
+
+    padding: 12px 18px;
+}
 
     .botoes button,
     .gameover-botoes button {

@@ -144,11 +144,6 @@ button {
         max-width: none;
     }
 
-    #relogio {
-        font-size: 7px;
-        top: 493px;
-    }
-
     #btnCandidatar,
 #btnContato {
     width: 80%;

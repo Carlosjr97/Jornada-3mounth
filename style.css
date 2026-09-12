@@ -60,3 +60,15 @@ body {
 #btnPlay:hover {
     transform: scale(1.1);
 }
+
+/* Celular em pé: capa.png é larga (tem o título do jogo desenhado do lado
+   direito da imagem). Com object-fit:cover ela cortaria boa parte da largura
+   pra cobrir a tela alta do celular, escondendo o título. Trocamos pra
+   "contain" pra imagem inteira (com o título) continuar visível, mesmo
+   sobrando um pouco de fundo preto em cima/embaixo — a imagem já é escura,
+   então combina com o preto do body. */
+@media (max-width: 600px) and (orientation: portrait) {
+    .capa-jogo {
+        object-fit: contain;
+    }
+}

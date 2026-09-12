@@ -162,3 +162,24 @@ body {
 #btnProximoDia:hover {
     transform: scale(1.1);
 }
+
+/* Celular em pé: personagem lendo ocupa a parte de baixo, os dois botões
+   ficam empilhados no topo (responsivo.css já força width:100% neles nessa
+   faixa) — ver responsivo.css pra explicação geral do layout de celular */
+@media (max-width: 600px) and (orientation: portrait) {
+    .chao1 {
+        height: 14%;
+    }
+
+    .lendo {
+        width: 64vw;
+        height: 77vw;
+        bottom: 14%;
+    }
+
+    .botoes {
+        position: absolute;
+        top: 5%;
+        width: 88%;
+    }
+}

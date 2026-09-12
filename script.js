@@ -3,9 +3,25 @@
 // se um dia você mudar o width/height fixo lá no CSS, mude aqui também para os mesmos valores.
 const LARGURA_BASE = 1366;
 const ALTURA_BASE = 768;
+const LARGURA_MOBILE = 600; // abaixo disso a gente usa layout próprio de celular (ver @media nos .css de cada tela), em vez de encolher a cena de 1366x768 inteira
 const cena = document.querySelector("main"); // pega a <main> da página atual (só existe uma por tela)
 
 function ajustarEscala() {
+    // No celular EM PÉ a cena de 1366x768 escalada por width vira uma tira
+    // fina no meio da tela, com barra preta enorme em cima/embaixo (a
+    // proporção 16:9 da cena não combina com a proporção alta/estreita do
+    // celular). Em vez disso, nesse caso a gente NÃO aplica o scale(): cada
+    // tela*.css tem um bloco @media (max-width: 600px) and (orientation:
+    // portrait) com um layout próprio, pensado pra tela alta e estreita do
+    // celular. Em paisagem (largura > altura) a cena já cabe bem escalada,
+    // então continua usando o scale() normal mesmo em telas pequenas.
+    const ehCelularEmPe = window.innerWidth <= LARGURA_MOBILE && window.innerWidth < window.innerHeight;
+    if (ehCelularEmPe) {
+        cena.style.transform = "none";
+        document.documentElement.style.setProperty("--escala", 1);
+        return;
+    }
+
     const escalaLargura = window.innerWidth / LARGURA_BASE;
     const escalaAltura = window.innerHeight / ALTURA_BASE;
     const escala = Math.min(escalaLargura, escalaAltura); // usa a menor, pra caber a cena inteira sem cortar nada

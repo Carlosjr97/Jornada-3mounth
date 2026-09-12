@@ -148,3 +148,44 @@ body {
 .casaChegando.chegou {
     left: 20%; /* posição final — ajuste até ficar do lado da moto */
 }
+
+/* Celular em pé: nuvem/moto/casa em unidades vw pra não estourar a largura
+   estreita do aparelho (700px da casa sozinho já seria mais largo que a
+   tela); left/bottom em % continuam funcionando iguais no fim da animação,
+   já que % também acompanha a largura da cena (ver responsivo.css) */
+@media (max-width: 600px) and (orientation: portrait) {
+    .asfalto1 {
+        height: 16%;
+    }
+
+    .nuvem {
+        top: 6%;
+        width: 30vw;
+        height: 10vw;
+    }
+
+    .correndo {
+        width: 34vw;
+        height: 20vw;
+        left: 6vw;
+        bottom: 17%;
+    }
+
+    .sentado {
+        width: 20vw;
+        height: 27vw;
+        left: 8vw;
+        bottom: 20%;
+    }
+
+    .casaChegando {
+        width: 74vw;
+        height: 44vw;
+        bottom: 17%;
+    }
+
+    #btnEncerrar {
+        bottom: auto;
+        top: 10%;
+    }
+}

@@ -89,3 +89,37 @@ body {
 #btnSubanamoto:hover {
     transform: scale(1.1);
 }
+
+/* Celular em pé: casa em cima, personagem+pop embaixo perto do asfalto,
+   botão no meio sobrando espaço (ver responsivo.css pra explicação geral) */
+@media (max-width: 600px) and (orientation: portrait) {
+    .asfalto {
+        height: 16%;
+    }
+
+    .casa {
+        width: 92vw;
+        height: 58vw;
+        top: 4%;
+        left: 4vw;
+        bottom: auto;
+    }
+
+    .parado {
+        width: 24vw;
+        height: 35vw;
+        left: 34vw;
+        bottom: 14%;
+    }
+
+    .pop {
+        width: 32vw;
+        height: 19vw;
+        left: 56vw;
+        bottom: 14%;
+    }
+
+    #btnSubanamoto {
+        bottom: 38%;
+    }
+}

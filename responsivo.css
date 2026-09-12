@@ -120,41 +120,38 @@ button {
     gap: clamp(calc(14px / var(--escala)), 50px, calc(70px / var(--escala)));
 }
 
-/* ---------- Celular (retrato) e paisagem baixa: prioridade é caber na tela ---------- */
-@media (max-width: 480px), (max-height: 480px) {
+/* ==========================================================================
+   Celular em pé (retrato, largura <= 600px): layout PRÓPRIO, sem scale()
+   --------------------------------------------------------------------------
+   O script.js não aplica mais transform: scale() nessa faixa (ver ajustarEscala
+   em script.js) porque encolher a cena de 1366x768 pela LARGURA de um celular
+   deixa a cena com só ~180px de altura no meio da tela, com barra preta enorme
+   em cima/embaixo — funcional, mas feio. Em vez disso, cada tela*.css tem seu
+   próprio bloco @media (max-width: 600px) and (orientation: portrait)
+   redesenhando o tamanho/posição de CADA elemento pra essa faixa (aqui vão só
+   as regras genéricas, que valem pra qualquer tela). Paisagem continua usando
+   o scale() normal (já testado e ficou bom).
+   ========================================================================== */
+@media (max-width: 600px) and (orientation: portrait) {
+    .tela-inicial,
+    .tela-2,
+    .tela-3,
+    .tela-4,
+    .tela-5 {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh; /* dvh conta a barra de endereço do navegador do celular; sobrescreve o 100vh acima em navegadores que suportam */
+        max-width: none;
+    }
+
     .botoes button,
     .gameover-botoes button {
-        width: 100%; /* empilha os botões em coluna, um por linha */
+        width: 100%; /* empilha os botões em coluna, um por linha, em vez de lado a lado */
     }
 
-    /* os dois botões da tela5 têm texto bem longo ("Se candidatar para vagas
-       compatíveis" / "Fazer contato com recrutadores no Linkedin"): no celular
-       menor, um piso de 20px reais faria o texto quebrar em muitas linhas e
-       estourar a altura da cena. Aceitamos um piso um pouco menor (16px, que
-       ainda cumpre a regra geral de texto legível) só nesses dois botões. */
-    #btnCandidatar,
-    #btnContato {
-        font-size: clamp(calc(16px / var(--escala)), 24px, calc(26px / var(--escala)));
-    }
-
-    /* sobe os botões pra abrir espaço pros dois ficarem empilhados na tela5 */
-    .botoes {
-        top: 40px;
-    }
-
-    /* Painel de gameover: a mensagem + os dois botões empilhados não cabem
-       nos 768px de altura da cena quando a escala é muito pequena (celular
-       pequeno). Em vez de deixar o main.overflow:hidden cortar o topo da
-       mensagem ou o botão de baixo (bug real visto no teste em 320px), o
-       próprio painel vira rolável: nada fica inacessível, só passa a
-       precisar de um scroll vertical dentro do quadro escuro. */
+    /* rede de segurança: se mesmo com o layout novo o conteúdo do gameover
+       não couber (aparelho bem baixo), o painel rola em vez de cortar texto */
     .gameover {
-        justify-content: flex-start;
         overflow-y: auto;
-        padding: 24px 16px;
-    }
-
-    .gameover p {
-        margin-top: 12px;
     }
 }

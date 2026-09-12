@@ -114,3 +114,59 @@ body {
 #btnAcordar:hover {
     transform: scale(1.1);
 }
+
+/* ==========================================================================
+   Celular em pé: layout próprio (ver responsivo.css pra explicação geral).
+   Reorganiza janela/cama/cômoda/relógio/piso pra usar a altura toda da tela
+   (unidades vw pro tamanho, já que isso mantém a proporção real de cada PNG
+   independente da largura do aparelho).
+   ========================================================================== */
+@media (max-width: 600px) and (orientation: portrait) {
+    /* preto sólido funciona na cena desktop (mais preenchida), mas no celular
+       sobra bastante área vazia acima/entre os móveis — um degradê de "quarto
+       à noite" deixa esse vazio parecer intencional em vez de tela quebrada */
+    body {
+        background: linear-gradient(#000000 0%, #10182a 45%, #1c2740 100%);
+    }
+
+    .chao {
+        height: 15%;
+    }
+
+    .janela {
+        width: 40vw;
+        height: 38vw;
+        top: 5%;
+        bottom: auto;
+    }
+
+    .cama {
+        width: 88vw;
+        height: 58vw;
+        bottom: 14%;
+    }
+
+    .dormindo,
+    .acordado {
+        width: 58vw;
+        height: 21vw;
+        bottom: calc(14% + 22vw);
+    }
+
+    .comoda {
+        width: 26vw;
+        height: 25vw;
+        left: 4vw;
+        bottom: 16%;
+    }
+
+    #relogio {
+        left: 6vw;
+        top: auto;
+        bottom: calc(16% + 20vw);
+    }
+
+    #btnAcordar {
+        bottom: 4%;
+    }
+}

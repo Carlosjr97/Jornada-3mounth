@@ -3,36 +3,34 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+}
+
 /*  Configurações gerais da página */
 body {
     background-color: #08163D;
     font-family: Arial, sans-serif;
     overflow: hidden;
 
-    /* centraliza a "cena" (tamanho fixo) dentro da janela/tela do celular */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* controla a tela inicial
-   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
-   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+/* controla a tela inicial - tamanho fixo em qualquer tela */
 .tela-5 {
-    width: 1366px;
-    height: 768px;
+    width: min(100vw, 177.86vh);
+    aspect-ratio: 1366 / 768;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    container-type: inline-size;
 
     position: relative;
-    flex-shrink: 0;
 }
 
 .chao1 {
     position: absolute;
-
+    position: absolute;
     bottom: 0;
     left: 0;
 
@@ -44,54 +42,68 @@ body {
 
 /* aqui definimos o tamanho da capa*/
 .lendo {
-    width: 500px;
-    height: 600px;
-    bottom: 0px;
     position: absolute;
+    width: 36.603%;
+    height: 78.125%;
+    bottom: 0%;
+    left: 30%;
 }
 
 
 .botoes {
     position: absolute;
-    top: 100px;
+    top: 10%;
+    left: 0;
+
+    width: 100%;
+    padding: 0 5%;
+
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 3%;
 }
-/* aqui é o conteúdo do botão*/
+
+/* telas pequenas: continua lado a lado, só encolhe fonte e tamanho do botão */
+@container (max-width: 500px) {
+    .botoes {
+        top: 0%;
+        gap: 2%;
+    }
+
+    #btnCandidatar,
+    #btnContato {
+        padding: clamp(6px, 1.098cqw, 15px) clamp(8px, 2.928cqw, 40px);
+        font-size: clamp(9px, 1.757cqw, 24px);
+        white-space: normal;
+        line-height: 1.15;
+    }
+}
 #btnCandidatar {
-    position: relative;
-    bottom: 8%;
+     padding: clamp(8px, 1.098cqw, 15px) clamp(20px, 2.928cqw, 40px);
+     font-size: clamp(14px, 1.757cqw, 24px);
+     font-weight: bold;
 
-    padding: 15px 40px;
+     cursor: pointer;
 
-    font-size: 24px;
-    font-weight: bold;
+     border: clamp(2px, 0.293cqw, 4px) solid white;
+     background: green;
+     color: white;
 
-    cursor: pointer;
-
-    border: 4px solid white;
-    background: green;
-    color: white;
-
-    image-rendering: pixelated;
-}
+     image-rendering: pixelated;
+ }
 
 #btnCandidatar:hover {
     transform: scale(1.1);
 }
 
 #btnContato {
-    position: relative;
-    bottom: 8%;
-
-    padding: 15px 40px;
-
-    font-size: 24px;
+    padding: clamp(8px, 1.098cqw, 15px) clamp(20px, 2.928cqw, 40px);
+    font-size: clamp(14px, 1.757cqw, 24px);
     font-weight: bold;
 
     cursor: pointer;
 
-    border: 4px solid white;
+    border: clamp(2px, 0.293cqw, 4px) solid white;
     background: blue;
     color: white;
 
@@ -125,7 +137,7 @@ body {
 }
 
 .gameover p {
-    font-size: 28px;
+    font-size: clamp(16px, 2.050cqw, 28px);
     font-weight: bold;
     max-width: 700px;
     margin-bottom: 30px;
@@ -137,14 +149,13 @@ body {
 }
 
 .gameover-botoes button {
-    padding: 15px 30px;
-
-    font-size: 20px;
+    padding: clamp(8px, 1.098cqw, 15px) clamp(16px, 2.196cqw, 30px);
+    font-size: clamp(12px, 1.464cqw, 20px);
     font-weight: bold;
 
     cursor: pointer;
 
-    border: 4px solid white;
+    border: clamp(2px, 0.293cqw, 4px) solid white;
     color: white;
 
     image-rendering: pixelated;
@@ -161,25 +172,4 @@ body {
 #btnTentarNovamente:hover,
 #btnProximoDia:hover {
     transform: scale(1.1);
-}
-
-/* Celular em pé: personagem lendo ocupa a parte de baixo, os dois botões
-   ficam empilhados no topo (responsivo.css já força width:100% neles nessa
-   faixa) — ver responsivo.css pra explicação geral do layout de celular */
-@media (max-width: 600px) and (orientation: portrait) {
-    .chao1 {
-        height: 14%;
-    }
-
-    .lendo {
-        width: 64vw;
-        height: 77vw;
-        bottom: 6%;
-    }
-
-    .botoes {
-        position: absolute;
-        top: 5%;
-        width: 88%;
-    }
 }

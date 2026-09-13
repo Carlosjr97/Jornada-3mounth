@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 /*  Configurações gerais da página */
+
+html, body {
+    height: 100%;
+}
 body {
     background: linear-gradient( #182238 0%, #34445F 45%, #AEB8C5 100%);
     font-family: Arial, sans-serif;
@@ -14,20 +18,14 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* controla a tela inicial
-   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
-   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+/* controla a tela inicial - tamanho fixo em qualquer tela */
 .tela-3 {
-    width: 1366px;
-    height: 768px;
+    width: min(100vw, 177.86vh);
+    aspect-ratio: 1366 / 768;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    container-type: inline-size;
 
     position: relative;
-    flex-shrink: 0;
 }
 
 .asfalto {
@@ -44,82 +42,48 @@ body {
 
 /* aqui definimos o tamanho da capa*/
 .casa {
-    width: 950px;
-    height: 600px;
-    bottom: 58px;
-    left: 100px;
     position: absolute;
+    width: 69.546%;
+    height: 78.125%;
+    bottom: 19%;
+    left: 7.321%;
 }
 
 .parado{
-    width: 130px;
-    height: 190px;
-    bottom: 45px;
-    left: 450px;
     position: absolute;
+    width: 9.517%;
+    height: 24.740%;
+    bottom: 5.859%;
+    left: 32.943%;
 }
 
 /* aplicada no lugar de .dormindo quando o personagem acorda
    ajuste width/height/bottom aqui até o tamanho ficar igual ao de .dormindo na tela */
 .pop{
-    width: 200px;
-    height: 120px;
-    bottom: 0px;
-    left: 600px;
     position: absolute;
+    width: 14.641%;
+    height: 15.625%;
+    bottom: 5%;
+    left: 43.924%;
 }
 
 #btnSubanamoto {
     position: absolute;
     bottom: 50%;
 
-    padding: 15px 40px;
-
-    font-size: 24px;
+    padding: clamp(8px, 1.098cqw, 15px) clamp(20px, 2.928cqw, 40px);
+    font-size: clamp(14px, 1.757cqw, 24px);
     font-weight: bold;
 
     cursor: pointer;
 
-    border: 4px solid white;
+    border: clamp(2px, 0.293cqw, 4px) solid white;
     background: #A9020B;
     color: white;
 
     image-rendering: pixelated;
+    left: 20%;
 }
 #btnSubanamoto:hover {
     transform: scale(1.1);
-}
-
-/* Celular em pé: casa em cima, personagem+pop embaixo perto do asfalto,
-   botão no meio sobrando espaço (ver responsivo.css pra explicação geral) */
-@media (max-width: 600px) and (orientation: portrait) {
-    .asfalto {
-        height: 16%;
-    }
-
-    .casa {
-        width: 95vw;
-        height: 65vw;
-        top: 48%;
-        left: 1vw;
-        bottom: auto;
-    }
-
-    .parado {
-        width: 14vw;
-        height: 23vw;
-        left: 34vw;
-        bottom: 14%;
-    }
-
-    .pop {
-        width: 22vw;
-        height: 15vw;
-        left: 50vw;
-        bottom: 10%;
-    }
-
-    #btnSubanamoto {
-        bottom: 40%;
-    }
 }

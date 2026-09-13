@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+}
 /*  Configurações gerais da página */
 body {
     background-color: #000;
@@ -14,25 +18,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* controla a tela inicial
-   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
-   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+/* controla a tela inicial - tamanho fixo em qualquer tela */
 .tela-2 {
-    width: 1366px;
-    height: 768px;
+    width: min(100vw, 177.86vh);
+    aspect-ratio: 1366 / 768;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    container-type: inline-size;
 
     position: relative;
-    flex-shrink: 0;
 }
 
 .chao {
     position: absolute;
-
     bottom: 0;
     left: 0;
 
@@ -44,41 +41,45 @@ body {
 
 /* aqui definimos o tamanho da capa*/
 .cama {
-    width: 700px;
-    height: 450px;
-    bottom: 20px;
     position: absolute;
+    width: 51.245%;
+    height: 58.594%;
+    bottom: 2.604%;
+    left: 30%;
 }
 
 .dormindo{
-    width: 400px;
-    height: 150px;
-    bottom: 250px;
     position: absolute;
+    width: 29.283%;
+    height: 19.531%;
+    bottom: 32.552%;
+    left: 40%;
 }
 
 /* aplicada no lugar de .dormindo quando o personagem acorda
    ajuste width/height/bottom aqui até o tamanho ficar igual ao de .dormindo na tela */
 .acordado{
-    width: 400px;
-    height: 150px;
-    bottom: 250px;
     position: absolute;
+    width: 29.283%;
+    height: 19.531%;
+    bottom: 32.552%;
+    left: 40%;
 }
 
 .comoda{
-    width: 300px;
-    height: 290px;
-    bottom: 85px;
-    left: 100px;
     position: absolute;
+    width: 21.962%;
+    height: 37.760%;
+    bottom: 11.068%;
+    left: 7.321%;
 }
 
-.janela{
-    width: 300px;
-    height: 290px;
-    bottom: 350px;
+.janela {
     position: absolute;
+    width: 21.962%;
+    height: 37.760%;
+    bottom: 45.573%;
+    left: 8%;
 }
 
 .relogio {
@@ -86,7 +87,7 @@ body {
     top: 59.6%;
     left: 19.5%;
 
-    font-size: 17px;
+    font-size: 1.2445cqw;
     font-weight: bold;
     color: red;
 
@@ -95,16 +96,17 @@ body {
 /* aqui é o conteúdo do botão*/
 #btnAcordar {
     position: absolute;
-    bottom: 8%;
+    top: 30%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 
-    padding: 15px 40px;
-
-    font-size: 24px;
+    padding: clamp(8px, 1.098cqw, 15px) clamp(20px, 2.928cqw, 40px);
+    font-size: clamp(14px, 1.757cqw, 24px);
     font-weight: bold;
 
     cursor: pointer;
 
-    border: 4px solid white;
+    border: clamp(2px, 0.293cqw, 4px) solid white;
     background: #A9020B;
     color: white;
 
@@ -112,63 +114,5 @@ body {
 }
 
 #btnAcordar:hover {
-    transform: scale(1.1);
-}
-
-/* ==========================================================================
-   Celular em pé: layout próprio (ver responsivo.css pra explicação geral).
-   Reorganiza janela/cama/cômoda/relógio/piso pra usar a altura toda da tela
-   (unidades vw pro tamanho, já que isso mantém a proporção real de cada PNG
-   independente da largura do aparelho).
-   ========================================================================== */
-@media (max-width: 600px) and (orientation: portrait) {
-    /* preto sólido funciona na cena desktop (mais preenchida), mas no celular
-       sobra bastante área vazia acima/entre os móveis — um degradê de "quarto
-       à noite" deixa esse vazio parecer intencional em vez de tela quebrada */
-    body {
-        background: linear-gradient(#000000 0%, #10182a 45%, #1c2740 100%);
-    }
-
-    .chao {
-        height: 15%;
-    }
-
-    .janela {
-        width: 40vw;
-        height: 38vw;
-        top: 40%;
-        bottom: auto;
-    }
-
-    .cama {
-        width: 50vw;
-        height: 35vw;
-        bottom: 10%;
-        left: 40%;
-    }
-
-    .dormindo,
-    .acordado {
-        width: 30vw;
-        height: 11vw;
-        bottom: calc(9% + 22vw);
-        left: 52%;
-    }
-
-    .comoda {
-        width: 26vw;
-        height: 30vw;
-        left: 10vw;
-        bottom: 13%;
-    }
-
-    #relogio {
-        left: 24vw;
-        top: auto;
-        bottom: calc(13.7% + 20vw);
-    }
-
-    #btnAcordar {
-        bottom: 3%;
-    }
+    transform: translate(-50%, -50%) scale(1.1);
 }

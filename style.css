@@ -4,53 +4,53 @@
     box-sizing: border-box;
 }
 /*  Configurações gerais da página */
+
+html, body {
+    height: 100%;
+}
 body {
+    margin: 0;
     background-color: #000;
     font-family: Arial, sans-serif;
     overflow: hidden;
-
-    /* centraliza a "cena" (tamanho fixo) dentro da janela/tela do celular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-/* controla a tela inicial
-   tamanho FIXO (o "tamanho de design"): o script.js escala essa cena inteira
-   para caber em qualquer tela, sem precisar mudar nenhum valor aqui dentro */
+/* controla a tela inicial - tamanho fixo em qualquer tela */
 .tela-inicial {
-    width: 1366px;
-    height: 768px;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    container-type: inline-size;
 
     position: relative;
-    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* aqui definimos o tamanho da capa*/
 .capa-jogo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 
     image-rendering: pixelated;
 }
 /* aqui é o conteúdo do botão*/
 #btnPlay {
     position: absolute;
-    bottom: 8%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    padding: 15px 40px;
-
-    font-size: 24px;
+    padding: clamp(8px, 1.098cqw, 15px) clamp(20px, 2.928cqw, 40px);
+    font-size: clamp(14px, 1.757cqw, 24px);
     font-weight: bold;
 
     cursor: pointer;
 
-    border: 4px solid white;
+    border: clamp(2px, 0.293cqw, 4px) solid white;
     background: #A9020B;
     color: white;
 
@@ -58,17 +58,5 @@ body {
 }
 
 #btnPlay:hover {
-    transform: scale(1.1);
-}
-
-/* Celular em pé: capa.png é larga (tem o título do jogo desenhado do lado
-   direito da imagem). Com object-fit:cover ela cortaria boa parte da largura
-   pra cobrir a tela alta do celular, escondendo o título. Trocamos pra
-   "contain" pra imagem inteira (com o título) continuar visível, mesmo
-   sobrando um pouco de fundo preto em cima/embaixo — a imagem já é escura,
-   então combina com o preto do body. */
-@media (max-width: 600px) and (orientation: portrait) {
-    .capa-jogo {
-        object-fit: contain;
-    }
+    transform: translate(-50%, -50%) scale(1.1);
 }
